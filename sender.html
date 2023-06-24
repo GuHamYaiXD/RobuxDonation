@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sender HTML</title>
+</head>
+<body>
+    <button id="triggerBtn">Trigger Event</button>
+
+    <script type="module">
+        const triggerBtn = document.getElementById('triggerBtn');
+        triggerBtn.addEventListener('click', () => {
+            const channel = new BroadcastChannel('myChannel');
+            channel.postMessage('eventTriggered');
+        });
+    </script>
+</body>
+</html>
