@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+    window.addEventListener('message', function(event) {
+      if (event.origin === 'https://guhamyaixd.github.io') {
+        document.getElementById('text').textContent = event.data;
+      }
+    });
+  </script>
+</head>
+<body>
+  <p id="text">Original Text</p>
+</body>
+</html>
