@@ -1,44 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Receiver HTML</title>
-    <style>
-        .test {
-            opacity: 0;
-        }
-        .fade-in {
-            opacity: 1;
-            transition: opacity 1s;
-        }
-        .donate {
-        text-align: center;
-        font-size: 150%;
-    }
-    .decription {
-        position: relative;
-        text-align: center;
-        font-size: 150%;
-    }
-    </style>
+  <script>
+    window.addEventListener('message', function(event) {
+      if (event.origin === 'https://guhamyaixd.github.io') {
+        document.getElementById('text').textContent = event.data;
+      }
+    });
+  </script>
 </head>
 <body>
-    <h1 id="message">No event triggered yet.</h1>
-    <img class = "test "id="myImage" src="https://media.tenor.com/WebK3Pr7dn4AAAAd/gintama-kaguya.gif" alt="Image" width="100%">
-    <p class="donate">Someone has donated ... Robux</p>
-    <p class="decription">Test Donate</p>
-    <script type="module">
-        const channel = new BroadcastChannel('myChannel');
-        channel.onmessage = (event) => {
-            if (event.data === 'eventTriggered') {
-                const messageElement = document.getElementById('message');
-                messageElement.textContent = 'Event triggered!';
-                const imageElement = document.getElementById('myImage');
-                imageElement.classList.add('fade-in');
-                setTimeout(() => {
-                    imageElement.style.opacity = '1';
-                }, 1000);
-            }
-        };
-    </script>
+  <p id="text">Original Text</p>
 </body>
 </html>
